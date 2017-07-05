@@ -76,8 +76,8 @@ namespace MaterialDesignDemo.Domain
             //note, you can also grab the session when the dialog opens via the DialogOpenedEventHandler
 
             //lets run a fake operation for 3 seconds then close this baby.
-            Task.Delay(TimeSpan.FromSeconds(3))
-                .ContinueWith((t, _) => eventArgs.Session.Close(false), null,
+            TaskEx.Delay(TimeSpan.FromSeconds(3))
+                .ContinueWith(t => eventArgs.Session.Close(false),
                     TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -130,8 +130,8 @@ namespace MaterialDesignDemo.Domain
         {
             //pretend to do something for 3 seconds, then close
             Sample4Content = new SampleProgressDialog();
-            Task.Delay(TimeSpan.FromSeconds(3))
-                .ContinueWith((t, _) => IsSample4DialogOpen = false, null,
+            TaskEx.Delay(TimeSpan.FromSeconds(3))
+                .ContinueWith(t => IsSample4DialogOpen = false,
                     TaskScheduler.FromCurrentSynchronizationContext());
         }
 

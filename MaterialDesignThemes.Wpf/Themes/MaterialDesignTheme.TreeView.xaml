@@ -34,24 +34,10 @@
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Opacity" Value=".56"/>
                         </Trigger>
-                        <Trigger Property="VirtualizingPanel.IsVirtualizing" Value="true">
-                            <Setter Property="CanContentScroll" TargetName="_tv_scrollviewer_" Value="true"/>
-                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="VirtualizingPanel.IsVirtualizing" Value="true">
-                <Setter Property="ItemsPanel">
-                    <Setter.Value>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel/>
-                        </ItemsPanelTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
     <Style x:Key="MaterialDesignTreeViewItemFocusVisual">
@@ -223,7 +209,7 @@
                                     <VisualTransition GeneratedDuration="0" To="Collapsed">
                                         <VisualTransition.GeneratedEasingFunction>
                                             <CubicEase EasingMode="EaseOut"/>
-                                        </VisualTransition.GeneratedEasingFunction>                                        
+                                        </VisualTransition.GeneratedEasingFunction>
                                         <Storyboard>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ItemsHost" Storyboard.TargetProperty="Visibility">
                                                 <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Collapsed}" />
@@ -260,7 +246,7 @@
                                       Margin="8 0 8 0"
                                       VerticalAlignment="Center"
                                               />
-                        
+
                         <Border x:Name="MouseOverBorder"
                                 Grid.Column="1" Grid.ColumnSpan="2"
                                 IsHitTestVisible="False"
@@ -311,17 +297,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="VirtualizingPanel.IsVirtualizing" Value="true">
-                <Setter Property="ItemsPanel">
-                    <Setter.Value>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel/>
-                        </ItemsPanelTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

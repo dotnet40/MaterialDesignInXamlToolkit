@@ -165,7 +165,7 @@ namespace MaterialDesignThemes.Wpf.Transitions
 
         private TransitionerSlide GetSlide(object item)
         {
-            if (IsItemItsOwnContainer(item))
+            if (base.IsItemItsOwnContainerOverride(item))
                 return (TransitionerSlide)item;
 
             return (TransitionerSlide)ItemContainerGenerator.ContainerFromItem(item);

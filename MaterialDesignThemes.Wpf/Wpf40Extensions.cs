@@ -2,11 +2,27 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+
+namespace System.Windows.Controls
+{
+    internal static class ItemsControlExtensions
+    {
+        private static readonly MethodInfo _isItemItsOwnContainer =
+            typeof(ItemsControl).GetMethod("IsItemItsOwnContainerOverride", BindingFlags.Instance | BindingFlags.NonPublic);
+
+        public static bool IsItemItsOwnContainer(this ItemsControl itemsControl, object item)
+        {
+            return (bool)_isItemItsOwnContainer.Invoke(itemsControl, new[] { item });
+        }
+    }
+}
 
 namespace System.Windows.Threading
 {
@@ -50,7 +66,6 @@ namespace System.Windows.Threading
 
     internal static class DispatcherOperationExtensions
     {
-
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public static TaskAwaiter GetAwaiter(this DispatcherOperation operation)
         {

@@ -307,9 +307,6 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{DynamicResource MaterialDesignDivider}" />
             </Trigger>
-            <Trigger Property="IsNewItem" Value="True">
-                <Setter Property="Margin" Value="{Binding NewItemMargin, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
-            </Trigger>
         </Style.Triggers>
     </Style>
 
@@ -374,7 +371,6 @@
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="IsGrouping" Value="true"/>
-                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
                 </MultiTrigger.Conditions>
                 <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
             </MultiTrigger>
