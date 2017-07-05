@@ -1,11 +1,11 @@
-FRAMEWORK: >= NET45
+FRAMEWORK: >= NET40
 NUGET
   remote: https://www.nuget.org/api/v2
     Castle.Core (3.3.3) - framework: net452
     Dragablz (0.0.3.165)
-    MahApps.Metro (1.4.1)
+    MahApps.Metro (1.5)
     Moq (4.5.10) - framework: net452
-      Castle.Core (>= 3.3.3)
+      Castle.Core (>= 3.3.3) - framework: >= net45
     NSubstitute (1.10) - framework: net452
     RhinoMocks (3.6.1) - framework: net452
     Shouldly (2.8) - framework: net452
@@ -15,16 +15,23 @@ NUGET
     xunit.abstractions (2.0)
     xunit.assert (2.1)
     xunit.core (2.1)
-      xunit.extensibility.core (2.1)
-      xunit.extensibility.execution (2.1)
+      xunit.extensibility.core (2.1) - framework: >= net45
+      xunit.extensibility.execution (2.1) - framework: >= net45
     xunit.extensibility.core (2.1)
       xunit.abstractions (2.0)
     xunit.extensibility.execution (2.1)
-      xunit.extensibility.core (2.1)
+      xunit.extensibility.core (2.1) - framework: >= net45
+  remote: https://www.myget.org/F/dotnet40
+    System.Runtime (4.3.0-net40) - framework: net40
+    System.Threading (4.3.0-net40) - framework: net40
+      System.Runtime (>= 4.3.0-net40)
+    System.Threading.Tasks (4.3.0-net40) - framework: net40
+      System.Runtime (>= 4.3.0-net40)
+      System.Threading (>= 4.3.0-net40)
 GITHUB
   remote: ControlzEx/ControlzEx
-    src/ControlzEx/BadgedEx.cs (c0ebf5b9937c52bb4b0012e3430aae6397e400db)
-    src/ControlzEx/PackIconBase.cs (c0ebf5b9937c52bb4b0012e3430aae6397e400db)
-    src/ControlzEx/PopupEx.cs (c0ebf5b9937c52bb4b0012e3430aae6397e400db)
+    src/ControlzEx/BadgedEx.cs (1f4d66092fb101f3ece1dc88b36c20d815f88b2b)
+    src/ControlzEx/PackIconBase.cs (1f4d66092fb101f3ece1dc88b36c20d815f88b2b)
+    src/ControlzEx/PopupEx.cs (1f4d66092fb101f3ece1dc88b36c20d815f88b2b)
   remote: samueldjack/VirtualCollection
     VirtualCollection/VirtualCollection/VirtualizingWrapPanel.cs (e63d891c252c2ac1a3ebb26dddb9a3d89effe3f2)

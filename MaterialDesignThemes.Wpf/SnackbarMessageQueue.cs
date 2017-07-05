@@ -318,7 +318,7 @@ namespace MaterialDesignThemes.Wpf
 
         private async Task ShowAsync(Snackbar snackbar, SnackbarMessageQueueItem messageQueueItem)
         {
-            await Task.Run(async () =>
+            await TaskEx.Run(async () =>
                 {
                     //create and show the message, setting up all the handles we need to wait on
                     var actionClickWaitHandle = new ManualResetEvent(false);
@@ -383,7 +383,7 @@ namespace MaterialDesignThemes.Wpf
             MouseNotOverManagedWaitHandle mouseNotOverManagedWaitHandle,
             WaitHandle durationPassedWaitHandle, WaitHandle actionClickWaitHandle)
         {
-            await Task.WhenAny(
+            await TaskEx.WhenAny(
                 Task.Factory.StartNew(() =>
                 {
                     WaitHandle.WaitAll(new[]
